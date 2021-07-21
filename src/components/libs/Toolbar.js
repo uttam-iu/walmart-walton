@@ -85,11 +85,9 @@ const useStyles = makeStyles((theme) => ({
 		drawer: {
 			'& .MuiDrawer-paperAnchorLeft': {
 				left: 0
-			},
+			}
 		}
 	}
-
-
 }));
 
 const AppToolbar = props => {
@@ -130,8 +128,8 @@ const AppToolbar = props => {
 
 	const onMenuClick = (item, isTopLeftMenu = false) => {
 		if (isTopLeftMenu) setClicked(item);
-		console.log(item)
-	}
+		console.log(item);
+	};
 
 	const openDrawer = () => {
 		return (<Drawer
@@ -158,7 +156,7 @@ const AppToolbar = props => {
 				))}
 			</List>
 		</Drawer >);
-	}
+	};
 
 	const getToolBarIconBtn = () => {
 		let iconArr = [];
@@ -176,7 +174,7 @@ const AppToolbar = props => {
 			return null;
 		});
 		return (<>{iconArr}</>);
-	}
+	};
 
 	const getTootBarMenu = () => {
 		let menuArr = [];
@@ -188,7 +186,7 @@ const AppToolbar = props => {
 			return null;
 		});
 		return (<>{menuArr}</>);
-	}
+	};
 
 	return (<Box display='flex' justifyContent='center'>
 		<Box>
@@ -197,6 +195,7 @@ const AppToolbar = props => {
 					<Box display='flex'>
 						<Box id='nav-menu-id' display='none' width='220px'>{openDrawer()}</Box>
 						<Box>
+
 							<AppBar position="static">
 								<Toolbar>
 									<IconButton edge="start" id='nav-menu-ic' className={classes.menuButton} onClick={handleDrawerOpen} color="inherit" aria-label="menu">
@@ -213,6 +212,7 @@ const AppToolbar = props => {
 									</Box>
 								</Toolbar>
 							</AppBar>
+
 							<Box flex={1} >
 								<Slider sliderItem={sliderItem} />
 							</Box>
@@ -221,6 +221,7 @@ const AppToolbar = props => {
 				</Container>
 			</Box>
 		</Box>
+
 		<MoreMenu
 			ref={moreMenuRef}
 			menuItems={rightMenu}

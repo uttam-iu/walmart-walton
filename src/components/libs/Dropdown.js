@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
@@ -7,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import bdFlag from '../../resources/image/bd-flag.png';
 import usFlag from '../../resources/image/us-flag.jpg';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
 	drBtnImg: {
@@ -35,7 +35,7 @@ const Dropdown = props => {
 		setVal(select);
 		setAnchorEl(null)
 		props.onSelectChange(key, select);
-	}
+	};
 
 	const generateMenu = () => {
 		const { items, name } = props;
@@ -54,7 +54,7 @@ const Dropdown = props => {
 			elemArr.push(elem);
 		}
 		return elemArr;
-	}
+	};
 
 	const getDropJsx = () => {
 		return (<Box bgcolor='transparent' height='100%' display='flex' ml={1} mr={1} mt={0} mb={0} flex={1}>
@@ -82,15 +82,15 @@ const Dropdown = props => {
 				{generateMenu()}
 			</Menu>
 		</Box>);
-	}
+	};
 
-	return (
-		<Box> {getDropJsx()} </Box>
-	);
+	return (<Box> {getDropJsx()} </Box>);
 };
 
-// Dropdown.propTypes = {
-
-// };
+Dropdown.propTypes = {
+	name: PropTypes.string.isRequired,
+	items: PropTypes.arrayOf(PropTypes.object).isRequired,
+	onSelectChange: PropTypes.func.isRequired
+};
 
 export default Dropdown;

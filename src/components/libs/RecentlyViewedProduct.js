@@ -7,9 +7,10 @@ import blender from '../../resources/image/blender.png';
 import Grid from '@material-ui/core/Grid';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
-	container:{
+	container: {
 		paddingTop: '40px', paddingBottom: '24px'
 	}
 }));
@@ -41,19 +42,21 @@ const RecentlyViewedProduct = props => {
 		});
 
 		return <Grid container spacing={3}>{proArr}</Grid>;
-	}
+	};
 
-	return (
-		<Container maxWidth='md' className={classes.container}>
-			<Box display='flex' justifyContent='space-between'>
-				<Box bgcolor='rgb(250, 212, 3)' padding={1} fontWeight={600}>RECENTLY VIEWED PRODUCTS</Box>
-				<Box><ChevronLeftIcon /><ChevronRightIcon /></Box>
-			</Box>
-			<Box display='flex'>
-				{getProducts()}
-			</Box>
-		</Container>
-	);
+	return (<Container maxWidth='md' className={classes.container}>
+		<Box display='flex' justifyContent='space-between'>
+			<Box bgcolor='rgb(250, 212, 3)' padding={1} fontWeight={600}>RECENTLY VIEWED PRODUCTS</Box>
+			<Box><ChevronLeftIcon /><ChevronRightIcon /></Box>
+		</Box>
+		<Box display='flex'>
+			{getProducts()}
+		</Box>
+	</Container>);
+};
+
+RecentlyViewedProduct.propTypes = {
+	products: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default RecentlyViewedProduct;

@@ -66,16 +66,16 @@ const Footer = props => {
 	const classes = useStyles();
 
 	const onSubmit = () => {
-		console.log('onsubmit')
-	}
+		console.log('onsubmit');
+	};
 
 	const onIconClick = (name) => {
-		console.log(name)
-	}
+		console.log(name);
+	};
 
 	const onQuickLink = (name) => {
-		console.log(name)
-	}
+		console.log(name);
+	};
 
 	const footerTop = () => {
 		return (<Box pt={4} pb={4} display='flex' justifyContent='center' flexDirection='column'>
@@ -105,94 +105,94 @@ const Footer = props => {
 				</Box>
 			</Container>
 		</Box>);
-	}
+	};
 
 	const footerBottom = () => {
-		return (
-			<Container maxWidth='md' className={classes.container}>
-				<Grid container spacing={3}>
-					<Grid item md={6} sm={12} xs={12}>
-						<Box display='flex'>
-							<Box flex={1} textAlign='left' padding='8px 16px'>
-								<Box fontSize={44} fontWeight={600} textAlign='left'>
-									<span>Jusa<span style={{ color: '#fad403' }}>co</span></span>
-								</Box>
-								<Box fontSize='12px' maxWidth={300} style={{ padding: '8px 0px' }}>Find that perfect color with our color picker and discover beautiful color harmonies and generate HTML.</Box>
-								<Box>
-									{iconBtn(<YouTube style={{ color: '#fff' }} />, 'youtube')}
-									{iconBtn(<Instagram style={{ color: '#fff' }} />, 'instagram')}
-									{iconBtn(<Twitter style={{ color: '#fff' }} />, 'twitter')}
-									{iconBtn(<Facebook style={{ color: '#fff' }} />, 'facebook')}
-									{iconBtn(<LinkedIn style={{ color: '#fff' }} />, 'linkedin')}
-								</Box>
-							</Box>
+		return (<Container maxWidth='md' className={classes.container}>
+			<Grid container spacing={3}>
 
-							<Box minWidth='160px' maxWidth='180px' padding='16px' className={classes.fResp}>
-								<Box fontSize='20px' fontWeight={600}>QUICK LINKS</Box>
-								{['about_us', 'contact_us', 'products', 'login', 'signup'].map((itm, i) => (
-									<Box key={i} padding='4px 0px'>
-										<a href='/#' style={{ textTransform: 'capitalize', fontSize: '12px' }} onClick={() => onQuickLink(itm)}>{itm.replace(/_/g, ' ')}</a>
-									</Box>
-								))}
+				<Grid item md={6} sm={12} xs={12}>
+					<Box display='flex'>
+						<Box flex={1} textAlign='left' padding='8px 16px'>
+							<Box fontSize={44} fontWeight={600} textAlign='left'>
+								<span>Jusa<span style={{ color: '#fad403' }}>co</span></span>
+							</Box>
+							<Box fontSize='12px' maxWidth={300} style={{ padding: '8px 0px' }}>Find that perfect color with our color picker and discover beautiful color harmonies and generate HTML.</Box>
+							<Box>
+								{iconBtn(<YouTube style={{ color: '#fff' }} />, 'youtube')}
+								{iconBtn(<Instagram style={{ color: '#fff' }} />, 'instagram')}
+								{iconBtn(<Twitter style={{ color: '#fff' }} />, 'twitter')}
+								{iconBtn(<Facebook style={{ color: '#fff' }} />, 'facebook')}
+								{iconBtn(<LinkedIn style={{ color: '#fff' }} />, 'linkedin')}
 							</Box>
 						</Box>
-					</Grid>
-					<Grid item md={6} sm={12} xs={12} >
-						<Box display='flex'>
-							<Box minWidth='160px' maxWidth='180px' textAlign='left' padding='16px'>
-								<Box fontSize='20px' fontWeight={600}>CUSTOM AREA</Box>
-								{['my_account', 'orders', 'traking_list', 'tearm', 'privacy_policy', 'my_cart'].map((itm, i) => (
-									<Box key={i} padding='4px 0px'>
-										<a href='/#' style={{ textTransform: 'capitalize', fontSize: '12px' }} onClick={() => onQuickLink(itm)}>{itm.replace(/_/g, ' ')}</a>
-									</Box>
-								))}
-							</Box>
-							<Box flex={1} padding='16px' className={classes.fResp}>
-								<Box fontSize={20} fontWeight={600}>
-									CONTACT INFO
+
+						<Box minWidth='160px' maxWidth='180px' padding='16px' className={classes.fResp}>
+							<Box fontSize='20px' fontWeight={600}>QUICK LINKS</Box>
+							{['about_us', 'contact_us', 'products', 'login', 'signup'].map((itm, i) => (
+								<Box key={i} padding='4px 0px'>
+									<a href='/#' style={{ textTransform: 'capitalize', fontSize: '12px' }} onClick={() => onQuickLink(itm)}>{itm.replace(/_/g, ' ')}</a>
 								</Box>
-								<Box display='flex' flex={1} className={classes.flexEnd}>
-									<Box flex={1} fontSize='12px' maxWidth={300} style={{ padding: '8px 0px' }}>Find that perfect color with our color picker and discover beautiful color harmonies and generate HTML.</Box>
-								</Box>
-								<Box display='flex' className={classes.flexEnd}>
-									<Box display='flex' justifyContent='center' flexDirection='column' pr={2}><HeadsetMicIcon /></Box>
-									<Box>
-										<Box fontSize='12px'>Have any Questions?</Box>
-										<Box fontSize='12px'>+ 123 456 7890</Box>
-									</Box>
-								</Box>
-								<Box display='flex' flex={1} className={classes.flexEnd}>
-									<Box flex={1} maxWidth='120px' width='120px' mt={1} mb={1} fontSize='12px' display='flex' justifyContent='center' flexDirection='column' padding='10px 32px' border='1px solid yellow' borderRadius='24px' fontWeight={600}>
-										Live Chat
-									</Box>
-								</Box>
-								<Box display='flex' flex={1} className={classes.flexEnd}>
-									<Box flex={1} display='flex' justifyContent='space-between' maxWidth={280} padding="16px 0px">
-										<Box ><img style={{ height: '38px', width: '100px', cursor: 'pointer' }} src={AppleIcon} alt={'app'} /></Box>
-										<Box ><img style={{ height: '40px', width: '100px', cursor: 'pointer' }} src={AndroidIcon} alt={'app'} /></Box>
-									</Box>
-								</Box>
-							</Box>
+							))}
 						</Box>
-					</Grid>
+					</Box>
 				</Grid>
-			</Container>
-		);
-	}
+
+				<Grid item md={6} sm={12} xs={12} >
+					<Box display='flex'>
+						<Box minWidth='160px' maxWidth='180px' textAlign='left' padding='16px'>
+							<Box fontSize='20px' fontWeight={600}>CUSTOM AREA</Box>
+							{['my_account', 'orders', 'traking_list', 'tearm', 'privacy_policy', 'my_cart'].map((itm, i) => (
+								<Box key={i} padding='4px 0px'>
+									<a href='/#' style={{ textTransform: 'capitalize', fontSize: '12px' }} onClick={() => onQuickLink(itm)}>{itm.replace(/_/g, ' ')}</a>
+								</Box>
+							))}
+						</Box>
+
+						<Box flex={1} padding='16px' className={classes.fResp}>
+							<Box fontSize={20} fontWeight={600}>
+								CONTACT INFO
+							</Box>
+							<Box display='flex' flex={1} className={classes.flexEnd}>
+								<Box flex={1} fontSize='12px' maxWidth={300} style={{ padding: '8px 0px' }}>Find that perfect color with our color picker and discover beautiful color harmonies and generate HTML.</Box>
+							</Box>
+							<Box display='flex' className={classes.flexEnd}>
+								<Box display='flex' justifyContent='center' flexDirection='column' pr={2}><HeadsetMicIcon /></Box>
+								<Box>
+									<Box fontSize='12px'>Have any Questions?</Box>
+									<Box fontSize='12px'>+ 123 456 7890</Box>
+								</Box>
+							</Box>
+							<Box display='flex' flex={1} className={classes.flexEnd}>
+								<Box flex={1} maxWidth='120px' width='120px' mt={1} mb={1} fontSize='12px' display='flex' justifyContent='center' flexDirection='column' padding='10px 32px' border='1px solid yellow' borderRadius='24px' fontWeight={600}>
+									Live Chat
+								</Box>
+							</Box>
+							<Box display='flex' flex={1} className={classes.flexEnd}>
+								<Box flex={1} display='flex' justifyContent='space-between' maxWidth={280} padding="16px 0px">
+									<Box ><img style={{ height: '38px', width: '100px', cursor: 'pointer' }} src={AppleIcon} alt={'app'} /></Box>
+									<Box ><img style={{ height: '40px', width: '100px', cursor: 'pointer' }} src={AndroidIcon} alt={'app'} /></Box>
+								</Box>
+							</Box>
+						</Box>
+					</Box>
+				</Grid>
+
+			</Grid>
+		</Container>);
+	};
 
 	const iconBtn = (icon, name) => {
 		return (<IconButton style={{ padding: '8px', background: '#b2b2b2', margin: '8px' }} size='small' key={name} edge="end" className={classes.menuButton} onClick={() => onIconClick(name)} color="inherit" aria-label="menu">
 			{icon}
 		</IconButton>);
-	}
+	};
 
-	return (
-		<Box>
-			{footerTop()}
-			{footerBottom()}
-			<FooterBottom />
-		</Box>
-	);
+	return (<Box>
+		{footerTop()}
+		{footerBottom()}
+		<FooterBottom />
+	</Box>);
 };
 
 export default Footer;

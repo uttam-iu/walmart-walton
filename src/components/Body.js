@@ -8,12 +8,10 @@ const Body = props => {
 	const easyAccessPro = config.easyAccess;
 	const recentlyViewed = config.recentlyViewed;
 
-	return (
-		<Box>
-			<EasyAccessPro products={easyAccessPro} />
-			<RecentlyViewedProduct products={recentlyViewed} />
-		</Box>
-	);
+	return (<Box>
+		<EasyAccessPro products={easyAccessPro} />
+		<RecentlyViewedProduct products={recentlyViewed} />
+	</Box>);
 };
 
 export default Body;

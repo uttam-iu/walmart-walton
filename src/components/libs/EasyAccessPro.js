@@ -1,19 +1,13 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import lapTop from '../../resources/image/laptop-3.png'
 import blender from '../../resources/image/blender.png';
-
-const useStyles = makeStyles((theme) => ({
-
-
-}));
+import PropTypes from 'prop-types';
 
 const EasyAccessPro = props => {
-	const classes = useStyles();
 	const products = props.products;
 
 	const getProducts = () => {
@@ -38,16 +32,16 @@ const EasyAccessPro = props => {
 			return null;
 		});
 
-		return <Grid container spacing={3}>{proArr}</Grid>;;
-	}
+		return <Grid container spacing={3}>{proArr}</Grid>;
+	};
 
-	return (
-		<Container maxWidth='md' className={classes.container}>
-			{/* <Box display='flex'> */}
-			{getProducts()}
-			{/* </Box> */}
-		</Container>
-	);
+	return (<Container maxWidth='md' >
+		{getProducts()}
+	</Container>);
+};
+
+EasyAccessPro.propTypes = {
+	products: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default EasyAccessPro;

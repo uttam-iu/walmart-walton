@@ -1,15 +1,15 @@
 import React from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import PropTypes from 'prop-types';
 
 class MoreMenu extends React.Component {
 	state = { anchorEl: null };
 
 	onMenuIndex = (item) => {
-		if (this.props.onLinkClick && typeof this.props.onLinkClick === 'function')
-			this.props.onLinkClick(item);
+		this.props.onLinkClick(item);
 		this.setTarget(null);
-	};
+	}
 
 	setTarget = (anchorEl = null) => this.setState({ anchorEl });
 
@@ -24,9 +24,9 @@ class MoreMenu extends React.Component {
 			</MenuItem>;
 			elemArr.push(elem);
 		}
-		return <div style={{ background: '#051D43' }}>
+		return (<div style={{ background: '#051D43' }}>
 			{elemArr}
-		</div>
+		</div>);
 	}
 
 	render() {
@@ -44,5 +44,10 @@ class MoreMenu extends React.Component {
 		</div>);
 	}
 }
+
+MoreMenu.propTypes = {
+	onLinkClick: PropTypes.func.isRequired,
+	menuItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default MoreMenu;

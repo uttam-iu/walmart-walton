@@ -17,26 +17,25 @@ const useStyles = makeStyles((theme) => ({
 
 const TopHeader = props => {
 	const classes = useStyles();
+
 	const onSelectChange = (key, item) => {
 		console.log(key, item);
-	}
+	};
 
-	return (
-		<Box height='40px' className={classes.root}>
-			<Container maxWidth='md' className={classes.container}>
-				<Box display='flex' justifyContent='space-between' height='inherit'>
-					<Box display='flex'>
-						<Dropdown items={config.languages} name='language' onSelectChange={onSelectChange} />
-						<hr style={{ height: '20px', width: '1px', marginTop: '10px' }} />
-						<Dropdown items={config.currencies} name='currency' onSelectChange={onSelectChange} />
-					</Box>
-					<Box display='flex' flexDirection='column' justifyContent='center'>
-						<span style={{ fontSize: '12px' }}>Cell: <span style={{ fontWeight: '500' }}>+1888 234 5678</span></span>
-					</Box>
+	return (<Box height='40px' className={classes.root}>
+		<Container maxWidth='md' className={classes.container}>
+			<Box display='flex' justifyContent='space-between' height='inherit'>
+				<Box display='flex'>
+					<Dropdown items={config.languages} name='language' onSelectChange={onSelectChange} />
+					<hr style={{ height: '20px', width: '1px', marginTop: '10px' }} />
+					<Dropdown items={config.currencies} name='currency' onSelectChange={onSelectChange} />
 				</Box>
-			</Container>
-		</Box>
-	);
+				<Box display='flex' flexDirection='column' justifyContent='center'>
+					<span style={{ fontSize: '12px' }}>Cell: <span style={{ fontWeight: '500' }}>+1888 234 5678</span></span>
+				</Box>
+			</Box>
+		</Container>
+	</Box>);
 };
 
 export default TopHeader;

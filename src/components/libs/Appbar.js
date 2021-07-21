@@ -41,8 +41,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		bodyCont1: {
 			display: 'flex', justifyContent: 'center'
-		},
-
+		}
 	}
 }));
 
@@ -59,18 +58,18 @@ const items = [
 	{
 		title: 'gadges'
 	},
-]
+];
 
 const Appbar = props => {
 	const classes = useStyles();
 
 	const onSelectChange = (key, item) => {
 		console.log(key, item);
-	}
+	};
 
 	const onSearch = () => {
-		console.log('on Search')
-	}
+		console.log('on Search');
+	};
 
 	const getAppBdy = () => {
 		return (<Box>
@@ -90,30 +89,28 @@ const Appbar = props => {
 					<SearchIcon style={{ color: '#fff' }} />
 				</Box>
 			</Box>
-		</Box >
-		);
-	}
-	return (
-		<Box style={{ padding: '16px 0px' }}>
-			<Container maxWidth='md' className={classes.container}>
-				<Box className={classes.appResp}>
-					<Box display='flex'>
-						<Box flex={.8} fontSize={44} fontWeight={600} textAlign='left'>
-							<span>Jusa<span style={{ color: '#fad403' }}>co</span></span>
-						</Box>
-						<Box className={classes.bodyCont}>{getAppBdy()}</Box>
-						<Box flex={.8} display='flex' justifyContent='center' flexDirection='column'>
-							<Box textAlign='end'>
-								<Badge badgeContent={5} style={{ color: '#fad403', cursor: 'pointer' }}><ShoppingCartIcon style={{ color: 'black' }} /></Badge>
-								<span style={{ paddingLeft: '16px', fontWeight: '500' }}>$990.00</span>
-							</Box>
+		</Box >);
+	};
+
+	return (<Box padding='16px 0px' >
+		<Container maxWidth='md' className={classes.container}>
+			<Box className={classes.appResp}>
+				<Box display='flex'>
+					<Box flex={.8} fontSize={44} fontWeight={600} textAlign='left'>
+						<span>Jusa<span style={{ color: '#fad403' }}>co</span></span>
+					</Box>
+					<Box className={classes.bodyCont}>{getAppBdy()}</Box>
+					<Box flex={.8} display='flex' justifyContent='center' flexDirection='column'>
+						<Box textAlign='end'>
+							<Badge badgeContent={5} style={{ color: '#fad403', cursor: 'pointer' }}><ShoppingCartIcon style={{ color: 'black' }} /></Badge>
+							<span style={{ paddingLeft: '16px', fontWeight: '500' }}>$990.00</span>
 						</Box>
 					</Box>
-					<Box className={classes.bodyCont1}>{getAppBdy()}</Box>
 				</Box>
-			</Container>
-		</Box>
-	);
+				<Box className={classes.bodyCont1}>{getAppBdy()}</Box>
+			</Box>
+		</Container>
+	</Box>);
 };
 
 export default Appbar;
