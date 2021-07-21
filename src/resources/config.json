@@ -1,0 +1,208 @@
+{
+	"languages": [
+		{
+			"title": "English",
+			"icon": "us-flag"
+		},
+		{
+			"title": "Bangla",
+			"icon": "bd-flag"
+		}
+	],
+	"currencies": [
+		{
+			"title": "Currency",
+			"subTitle": "USD"
+		},
+		{
+			"title": "Currency",
+			"subTitle": "BDT"
+		}
+	],
+	"menu": {
+		"topLeft": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "hop",
+				"hasChild": true
+			},
+			{
+				"name": "blog"
+			},
+			{
+				"name": "pages",
+				"hasChild": true
+			},
+			{
+				"name": "contact_us",
+				"hasChild": true
+			}
+		],
+		"topRight": [
+			{
+				"icon": "location",
+				"name": "location"
+			},
+			{
+				"name": "refresh",
+				"icon": "refresh"
+			},
+			{
+				"name": "notification",
+				"icon": "notification"
+			},
+			{
+				"name": "account",
+				"icon": "account"
+			}
+		],
+		"navMenu": [
+			{
+				"name": "brake_parts",
+				"hasChild": true
+			},
+			{
+				"name": "wheels_&_tires",
+				"hasChild": true
+			},
+			{
+				"name": "furnitured_&_decor",
+				"hasChild": true
+			},
+			{
+				"name": "turbo_system",
+				"hasChild": true
+			},
+			{
+				"name": "lighting"
+			},
+			{
+				"name": "accessories",
+				"hasChild": true
+			},
+			{
+				"name": "body_parts"
+			},
+			{
+				"name": "performance_filters"
+			},
+			{
+				"name": "engine_parts"
+			}
+		]
+	},
+	"slider": [
+		{
+			"category": "CLOTHING",
+			"title": "UPTO 20% OFF SPEAKERS",
+			"subTitle": "The Best Gadgets Collection 2021",
+			"image": "",
+			"actualPrice": 430.00,
+			"discountedPrice": 350.00
+		},
+		{
+			"category": "CLOTHING",
+			"title": "UPTO 20% OFF SPEAKERS",
+			"subTitle": "The Best Gadgets Collection 2021",
+			"image": "",
+			"actualPrice": 260.50,
+			"discountedPrice": 210.00
+		}
+	],
+	"easyAccess": [
+		{
+			"title": "Protective Sleeves",
+			"subTitle": "It is a long established fact that a render will be distracted",
+			"isCombo": false,
+			"image": ""
+		},
+		{
+			"title": "Nutrlllet Blender",
+			"subTitle": "It is a long established fact that a render will be distracted",
+			"isCombo": true,
+			"image": ""
+		}
+	],
+	"recentlyViewed": [
+		{
+			"category": "Electronics",
+			"subCategory": [
+				"Computer",
+				"Laptop",
+				"Macbook",
+				"Accessories",
+				"Tv & Audios",
+				"Mobiles",
+				"Games"
+			],
+			"image": ""
+		},
+		{
+			"category": "Mobiles",
+			"subCategory": [
+				"Computer",
+				"Laptop",
+				"Macbook",
+				"Accessories",
+				"Tv & Audios",
+				"Mobiles",
+				"Games"
+			],
+			"image": ""
+		},
+		{
+			"category": "Tv & Audios",
+			"subCategory": [
+				"Computer",
+				"Laptop",
+				"Macbook",
+				"Accessories",
+				"Tv & Audios",
+				"Mobiles",
+				"Games"
+			],
+			"image": ""
+		},
+		{
+			"category": "Laptops",
+			"subCategory": [
+				"Computer",
+				"Laptop",
+				"Macbook",
+				"Accessories",
+				"Tv & Audios",
+				"Mobiles",
+				"Games"
+			],
+			"image": ""
+		},
+		{
+			"category": "Accessories",
+			"subCategory": [
+				"Computer",
+				"Laptop",
+				"Macbook",
+				"Accessories",
+				"Tv & Audios",
+				"Mobiles",
+				"Games"
+			],
+			"image": ""
+		},
+		{
+			"category": "Games",
+			"subCategory": [
+				"Computer",
+				"Laptop",
+				"Macbook",
+				"Accessories",
+				"Tv & Audios",
+				"Mobiles",
+				"Games"
+			],
+			"image": ""
+		}
+	]
+}
