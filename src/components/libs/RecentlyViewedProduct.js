@@ -11,21 +11,21 @@ import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
 	container: {
-		paddingTop: '40px', paddingBottom: '24px'
+		padding: '40px 0px 24px 0px'
 	}
 }));
 
 const RecentlyViewedProduct = props => {
 	const classes = useStyles();
-	const products = props.products;
+	const { products, drawerOpen } = props;
 
 	const getProducts = () => {
 		let proArr = [];
 		products.map((pro, i) => {
-			const jsx = <Grid key={i} item md={4} sm={6} xs={12}>
+			const jsx = <Grid key={i} item md={drawerOpen ? 6 : 4} sm={drawerOpen ? 12 : 6} xs={12}>
 				<Box border='2px solid #f4f4f4' >
 					<Box display='flex' padding='16px'>
-						<Box flex={1} padding={{ sm: '16px', xs: '32px' }} display='flex' justifyContent='center' flexDirection='column'>
+						<Box flex={1} padding={{ sm: '16px', xs: '20px' }} display='flex' justifyContent='center' flexDirection='column'>
 							<img src={i % 2 === 0 ? lapTop : blender} alt='' style={{ height: '80px', maxWidth: '150px' }} />
 						</Box>
 						<Box flex={1} pl={2}>
@@ -57,6 +57,7 @@ const RecentlyViewedProduct = props => {
 
 RecentlyViewedProduct.propTypes = {
 	products: PropTypes.arrayOf(PropTypes.object).isRequired,
+	drawerOpen: PropTypes.bool.isRequired,
 };
 
 export default RecentlyViewedProduct;

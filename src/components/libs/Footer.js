@@ -13,12 +13,13 @@ import Twitter from '@material-ui/icons/Twitter';
 import LinkedIn from '@material-ui/icons/LinkedIn';
 import Facebook from '@material-ui/icons/Facebook';
 import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';
-import AppleIcon from '../resources/image/app_store.png';
-import AndroidIcon from '../resources/image/play-store.jpg';
-import FooterBottom from './libs/FooterBottom';
+import AppleIcon from '../../resources/image/app_store.png';
+import AndroidIcon from '../../resources/image/play-store.jpg';
+import FooterBottom from './FooterBottom';
 
 const useStyles = makeStyles((theme) => ({
 	container: {
+		padding:'0px',
 		'& .MuiInputBase-root': {
 			'& fieldset': {
 				borderColor: 'transparent',
@@ -64,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Footer = props => {
 	const classes = useStyles();
+	const { drawerOpen } = props;
 
 	const onSubmit = () => {
 		console.log('onsubmit');
@@ -104,14 +106,14 @@ const Footer = props => {
 					</Grid>
 				</Box>
 			</Container>
-		</Box>);
+		</Box >);
 	};
 
-	const footerBottom = () => {
+	const footerMid = () => {
 		return (<Container maxWidth='md' className={classes.container}>
 			<Grid container spacing={3}>
 
-				<Grid item md={6} sm={12} xs={12}>
+				<Grid item md={drawerOpen ? 12 : 6} sm={12} xs={12}>
 					<Box display='flex'>
 						<Box flex={1} textAlign='left' padding='8px 16px'>
 							<Box fontSize={44} fontWeight={600} textAlign='left'>
@@ -138,7 +140,7 @@ const Footer = props => {
 					</Box>
 				</Grid>
 
-				<Grid item md={6} sm={12} xs={12} >
+				<Grid item md={drawerOpen ? 12 : 6} sm={12} xs={12} >
 					<Box display='flex'>
 						<Box minWidth='160px' maxWidth='180px' textAlign='left' padding='16px'>
 							<Box fontSize='20px' fontWeight={600}>CUSTOM AREA</Box>
@@ -179,7 +181,7 @@ const Footer = props => {
 				</Grid>
 
 			</Grid>
-		</Container>);
+		</Container >);
 	};
 
 	const iconBtn = (icon, name) => {
@@ -190,8 +192,8 @@ const Footer = props => {
 
 	return (<Box>
 		{footerTop()}
-		{footerBottom()}
-		<FooterBottom />
+		{footerMid()}
+		<FooterBottom drawerOpen={drawerOpen} />
 	</Box>);
 };
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
-import EasyAccessPro from './libs/EasyAccessPro';
-import RecentlyViewedProduct from './libs/RecentlyViewedProduct';
-import config from '../resources/config.json';
+import EasyAccessPro from './EasyAccessPro';
+import RecentlyViewedProduct from './RecentlyViewedProduct';
+import config from '../../resources/config.json';
 
 const Body = props => {
 	const easyAccessPro = config.easyAccess;
@@ -10,7 +10,7 @@ const Body = props => {
 
 	return (<Box>
 		<EasyAccessPro products={easyAccessPro} />
-		<RecentlyViewedProduct products={recentlyViewed} />
+		<RecentlyViewedProduct products={recentlyViewed} drawerOpen={props.drawerOpen} />
 	</Box>);
 };
 

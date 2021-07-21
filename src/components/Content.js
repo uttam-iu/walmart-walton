@@ -16,15 +16,17 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Slider from '../Slider';
-import config from '../../resources/config.json';
+import Slider from './libs/Slider';
+import config from '../resources/config.json';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import CachedIcon from '@material-ui/icons/Cached';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import MoreMenu from './MoreMenu';
+import MoreMenu from './libs/MoreMenu';
+import Body from './libs/Body';
+import Footer from './libs/Footer';
 
 const drawerWidth = 220;
 
@@ -41,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
 		},
 		'& .clicked': {
 			color: 'rgb(250, 212, 3)'
+		},
+		'& .MuiAppBar-positionStatic': {
+			position: 'sticky', top: '130px'
 		}
 	},
 	menuButton: {
@@ -62,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 		}
 	},
 	drawerPaper: {
-		width: drawerWidth, height: '463px'
+		width: drawerWidth
 	},
 	drawerHeader: {
 		display: 'flex', alignItems: 'center', padding: theme.spacing(0, 1),
@@ -87,10 +92,17 @@ const useStyles = makeStyles((theme) => ({
 				left: 0
 			}
 		}
+	},
+	"@media (max-width: 700px)": {
+		container: {
+			'& .MuiAppBar-positionStatic': {
+				top: '186px'
+			}
+		},
 	}
 }));
 
-const AppToolbar = props => {
+const Content = props => {
 	const classes = useStyles();
 	const moreMenuRef = React.useRef();
 
@@ -100,6 +112,7 @@ const AppToolbar = props => {
 	const sliderItem = config.slider;
 
 	const [clicked, setClicked] = React.useState(leftMenu[0]);
+	const [isOpen, setOpen] = React.useState(false);
 
 	// const [size, setSize] = React.useState([0, 0]);
 	// React.useLayoutEffect(() => {
@@ -117,6 +130,7 @@ const AppToolbar = props => {
 		nav.style.display = 'block';
 		const navBtn = document.getElementById('nav-menu-ic');
 		navBtn.style.display = 'none';
+		setOpen(true);
 	};
 
 	const handleDrawerClose = () => {
@@ -124,6 +138,7 @@ const AppToolbar = props => {
 		nav.style.display = 'none';
 		const navBtn = document.getElementById('nav-menu-ic');
 		navBtn.style.display = 'block';
+		setOpen(false);
 	};
 
 	const onMenuClick = (item, isTopLeftMenu = false) => {
@@ -194,7 +209,7 @@ const AppToolbar = props => {
 				<Container maxWidth='md' className={classes.container}>
 					<Box display='flex'>
 						<Box id='nav-menu-id' display='none' width='220px'>{openDrawer()}</Box>
-						<Box>
+						<Box position='relative'>
 
 							<AppBar position="static">
 								<Toolbar>
@@ -215,6 +230,8 @@ const AppToolbar = props => {
 
 							<Box flex={1} >
 								<Slider sliderItem={sliderItem} />
+								<Body drawerOpen={isOpen} />
+								<Footer drawerOpen={isOpen} />
 							</Box>
 						</Box>
 					</Box>
@@ -231,4 +248,4 @@ const AppToolbar = props => {
 	</Box>);
 };
 
-export default AppToolbar;
+export default Content;
